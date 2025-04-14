@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GET vs Post</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS Files -->
+    <link rel="stylesheet" href="stylesgeneral.css">
+    <!-- Popper.js for Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+    <header>
+        <div> 
+            <ul class="nav nav-pills ms-auto justify-content-end"  class="nav-color" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link home-link" aria-current="page" href="index.html">
+                        <i class="bi bi-house-fill"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                     <i class="fas fa-gamepad"></i> Games
+                   </a>
+                   <ul class="dropdown-menu">
+                       <li><a class="dropdown-item" href="wordle.html">Wordle Game</a></li>
+                       <li><a class="dropdown-item" href="tictactoe.html">Tic-Tac-Toe</a></li>
+                   </ul>
+               </li>
+               <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                       <i class="fas fa-file-alt"></i> CV
+                   </a>
+                   <ul class="dropdown-menu">
+                       <li><a class="dropdown-item" href="cv.html">My CV</a></li>
+                       <li><a class="dropdown-item" href="createcv.html">Create CV</a></li>
+                   </ul>
+               </li>
+                <li class="nav-item">
+                    <a class="nav-link home-link" aria-current="page" href="schedule.html">
+                        <i class="bi bi-calendar"></i> SCHEDULE
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" ><i class="fas fa-book"></i> Reasearch</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="webhistorycss.html">WorldWide Web History</a></li>
+                    <li><a class="dropdown-item" href="mobileinthemodernwebcss.html">Mobile-First Development</a></li>
+                    <li><a class="dropdown-item" href="websecurityissuescss.html">Security issues in the WorldWide Web</a></li>
+                    <li><a class="dropdown-item" href="internetstatiscticscss.html">Internet statistics in the Middle East and Lebanon</a></li>
+                    <li><a class="dropdown-item" href="webhistorycss.html#css">CSS History</a></li>
+                    <li><a class="dropdown-item" href="webhistorycss.html#atrule">@Rule</a></li>
+                    <li><a class="dropdown-item" href="phpinfo.html">PHP</a></li>
+                    <li><a class="dropdown-item" href="xmlinfo.html">XML</a></li>
+                    <li><a class="dropdown-item" href="inputvsbutton.html">Input/Button</a></li>
+                    <li><a class="dropdown-item" href="getvspost.html">Get/Post</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="arabiccss.html">Arabic page</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="eventtable.html">Event Table</a></li>
+                  </ul>
+                </li>                           
+              </ul>
+            </div>  
+    </header>
+    <main>
+        <h1>GET Method vs POST Method</h1>
+        <section>
+            <h2>HTTP GET Method</h2>
+    
+            <h3>Definition</h3>
+            <p>The GET method requests data from a specified resource. It is used primarily to retrieve data without causing any side effects.</p>
+            
+            <h3>Characteristics</h3>
+            <ul>
+                <li><strong>Data Transmission:</strong> Data is appended to the URL in the form of query parameters. For example:</li>
+                <pre><code>GET /search?query=example</code></pre>
+                
+                <li><strong>Visibility:</strong> Since the parameters are part of the URL, they are visible in the browser's address bar. This can expose sensitive information if not handled properly.</li>
+                
+                <li><strong>Length Limitations:</strong> Most browsers and servers impose a limit on the URL length, typically around 2048 characters.</li>
+                
+                <li><strong>Idempotency:</strong> GET requests are idempotent, meaning multiple identical requests should produce the same result without causing any changes on the server.</li>
+                
+                <li><strong>Caching:</strong> Responses to GET requests can be cached by browsers, improving load times for frequently accessed resources.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>HTTP POST Method</h2>
+    
+            <h3>Definition</h3>
+            <p>The POST method submits data to be processed to a specified resource. It is commonly used when submitting form data or uploading files.</p>
+            
+            <h3>Characteristics</h3>
+            <ul>
+                <li><strong>Data Transmission:</strong> Data is sent in the request body, not in the URL. This allows for larger amounts of data to be sent. For example:</li>
+                <pre><code>POST /submit-data</code></pre>
+                
+                <li><strong>Visibility:</strong> Data sent via POST is not displayed in the URL, making it more secure for sensitive information.</li>
+                
+                <li><strong>No Length Limitations:</strong> There are no restrictions on the size of data sent, although servers may impose their own limits.</li>
+                
+                <li><strong>Non-Idempotency:</strong> POST requests are not idempotent; sending the same request multiple times may result in different outcomes (e.g., multiple entries in a database).</li>
+                
+                <li><strong>No Caching:</strong> Responses to POST requests are typically not cached by browsers, which ensures that the latest data is processed each time.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>When to Use Each Method</h2>
+    <p>Use the GET method when:</p>
+    <ul>
+        <li>Retrieving data without any side effects.</li>
+        <li>Bookmarking or sharing URLs with query parameters.</li>
+    </ul>
+
+    <p>Use the POST method when:</p>
+    <ul>
+        <li>Submitting form data that may include sensitive information.</li>
+        <li>Uploading files or large amounts of data.</li>
+        <li>Making changes to server-side resources.</li>
+    </ul>
+        </section>
+    </main>
+
+    <footer>
+        <a href="https://www.w3schools.com/css/default.asp">W3Schools</a> <i> and </i>
+        <a href="https://www.geeksforgeeks.org/css-supports-rule/">GeeksforGeeks</a>
+        <p>&copy; 2024 Fadi Dagher,for the course GIN446 Web Programming - USEK - This website is for educational
+            purposes only.</p>
+    </footer>
+</body>
+
+</html>

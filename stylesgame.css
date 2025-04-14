@@ -1,0 +1,180 @@
+
+
+body {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121213;
+    color: #d7dadc;
+}
+
+.hidden {
+    display: none;
+}
+
+#game-container {
+    text-align: center;
+    margin-bottom: 30px;
+    
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    max-width: 300px;
+    margin: 0 auto 20px auto;
+}
+
+.tile {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-transform: uppercase;
+    background-color: #121213;
+    color: #d7dadc;
+}
+
+.correct {
+    background-color: #538d4e;
+}
+
+.present {
+    background-color: #b59f3b;
+}
+
+.absent {
+    background-color: #3a3a3c;
+}
+
+#keyboard {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.key {
+    padding: 10px;
+    background-color: #818384;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.key:active {
+    transform: scale(0.95);
+}
+
+
+#restart-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #538d4e;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+
+#wordle-info {
+    
+    position: absolute;
+    width: 27%;                  /* Adjust the width of the info box */
+    padding: 15px;               /* Add padding inside the div */
+    background-color: #f4f4f4;   /* Set a background color */
+    border: 1px solid #ccc;      /* Add a border around the div */
+    border-radius: 10px;         /* Round the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow */
+    overflow-y: auto;            /* Allow scrolling if content overflows */
+    font-family: Arial, sans-serif;  /* Set font for readability */
+    z-index: 1000;               /* Ensure it appears above other content */
+    height: fit-content;         /* Adjust the height based on content */
+}
+#wordle-info h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+#wordle-info h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+#wordle-info p, #wordle-info ul {
+    font-size: 14px;
+    color: #555;
+}
+
+#wordle-info ul {
+    padding-left: 20px;
+}
+
+o ul {
+    padding-left: 20px;
+}
+
+/* Media Queries for Mobile Screens */
+@media screen and (max-width: 768px) {
+    /* Stack the game and info box vertically on mobile */
+    #game-container {
+        flex-direction: column; /* Stack vertically */
+        gap: 10px; /* Smaller gap between the game and info box */
+        margin-bottom: 15px;
+    }
+
+    /* Reduce the width of the game board on mobile */
+    #board {
+        max-width: 250px; /* Smaller board on mobile */
+        margin-top: 10px;
+    }
+
+    .tile {
+        width: 40px;
+        height: 40px;
+        font-size: 18px; /* Smaller tile font size */
+    }
+
+    /* Adjust the keyboard layout for mobile */
+    #keyboard {
+        grid-template-columns: repeat(7, 1fr); /* Fewer keys per row */
+        max-width: 350px; /* Smaller keyboard */
+    }
+
+    .key {
+        padding: 8px;
+        font-size: 14px; /* Smaller font for keys */
+    }
+
+    /* Adjust info box for mobile */
+    #wordle-info {
+        position: unset;
+        float: unset;
+        width: 90%; /* Make info box wider on small screens */
+        margin-right: 5%;
+        margin-left: 5%;
+        box-shadow: none; /* Optional: Remove shadow for simplicity */
+    }
+
+    /* Adjust heading sizes for mobile */
+    #wordle-info h2 {
+        font-size: 18px; /* Smaller heading font size */
+    }
+
+    #wordle-info h3 {
+        font-size: 16px; /* Smaller subheading font size */
+    }
+
+    #wordle-info p, #wordle-info ul {
+        font-size: 12px; /* Smaller text for paragraphs and lists */
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risks of the Internet by Fadi Dagher</title>
+    
+    
+
+</head>
+<body>
+    <header>
+        <div>
+                <label >
+                    <input type="checkbox" onclick="redirect(event, 'index.html')">
+                    <span >&lt;&lt;Turn on CSS</span>
+                </label>                           
+        </div>
+        <h1>Disclaimer</h1>
+        <p class="text-primary" style="--bs-text-opacity: .1;">This website is part of a university project and is for educational purposes only.
+         The content provided is not intended for commercial use, and any information or services 
+         presented on this site may be subject to changes or updates as part of ongoing academic work. 
+         The site administrators are not liable for any inaccuracies or outdated information. 
+         By using this website, you acknowledge that it is a student-led project and 
+         agree to its terms of use.<br></p>   
+    </header>
+    <main>
+        <section>
+            <h2><br>Essential Insights into Web History, Security, Mobile Trends, and Regional Internet Statistics</h2>
+            <p>Discover essential insights into the history of the World Wide Web, current trends, and future possibilities, along with the evolution of browsers. Explore security issues impacting the web and the broader internet, the importance of mobile-first development in modern web design, and internet statistics specific to the Middle East and Lebanon. For detailed information,<strong> check out the following links.</strong></p>       
+            <ul>
+        <li><a href="webhistory.html"><strong>The Birth and Evolution of the World Wide Web.</strong></a></li>
+        <li><a href="websecurityissues.html"><strong>Security issues on the World Wide Web and the broader internet.</strong></a></li>
+        <li><a href="mobileinthemodernweb.html"><strong>Mobile-First Development and Its Significance in Modern Web Design.</strong></a></li>    
+        <li><a href="internetstatistics.html"><strong>Internet statistics related to the Middle East and Lebanon.</strong></a></li>
+        <li><a href="arabic.html"><strong>Arabic page.</strong></a></li>
+    </ul>
+    </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 Fadi Dagher,All rights reserved.</p>
+    </footer>
+    <script>
+        function redirect(event, url) {
+            // Prevent checkbox toggle default behavior if needed
+            event.stopPropagation(); // Prevent the click event from bubbling up
+
+            setTimeout(() => {
+         window.location.replace(url);
+           }, 300); // Delay in milliseconds (300ms in this example)
+        }
+
+    </script>
+</body>
+</html>

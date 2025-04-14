@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create CV</title>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Fonts/Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Julius+Sans+One&family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<!--Custon CSS-->
+<link rel="stylesheet" href="stylesgeneral.css">
+<link rel="stylesheet" href="stylecv.css">
+
+
+</head>
+
+<body>
+    <header>
+        <div> 
+            <ul class="nav nav-pills ms-auto justify-content-end"  class="nav-color" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link home-link" aria-current="page" href="index.html">
+                        <i class="bi bi-house-fill"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                     <i class="fas fa-gamepad"></i> Games
+                   </a>
+                   <ul class="dropdown-menu">
+                       <li><a class="dropdown-item" href="wordle.html">Wordle Game</a></li>
+                       <li><a class="dropdown-item" href="tictactoe.html">Tic-Tac-Toe</a></li>
+                   </ul>
+               </li>
+               <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                       <i class="fas fa-file-alt"></i> CV
+                   </a>
+                   <ul class="dropdown-menu">
+                       <li><a class="dropdown-item" href="cv.html">My CV</a></li>
+                       <li><a class="dropdown-item" href="createcv.html">Create CV</a></li>
+                   </ul>
+               </li>
+                <li class="nav-item">
+                    <a class="nav-link home-link" aria-current="page" href="schedule.html">
+                        <i class="bi bi-calendar"></i> SCHEDULE
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" ><i class="fas fa-book"></i> Reasearch</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="webhistorycss.html">WorldWide Web History</a></li>
+                    <li><a class="dropdown-item" href="mobileinthemodernwebcss.html">Mobile-First Development</a></li>
+                    <li><a class="dropdown-item" href="websecurityissuescss.html">Security issues in the WorldWide Web</a></li>
+                    <li><a class="dropdown-item" href="internetstatiscticscss.html">Internet statistics in the Middle East and Lebanon</a></li>
+                    <li><a class="dropdown-item" href="webhistorycss.html#css">CSS History</a></li>
+                    <li><a class="dropdown-item" href="webhistorycss.html#atrule">@Rule</a></li>
+                    <li><a class="dropdown-item" href="phpinfo.html">PHP</a></li>
+                    <li><a class="dropdown-item" href="xmlinfo.html">XML</a></li>
+                    <li><a class="dropdown-item" href="inputvsbutton.html">Input/Button</a></li>
+                    <li><a class="dropdown-item" href="getvspost.html">Get/Post</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="arabiccss.html">Arabic page</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="eventtable.html">Event Table</a></li>
+                  </ul>
+                </li>                           
+              </ul>
+            </div>   
+    </header>
+
+    <!-- Form for User Input -->
+    <div class="userInputForm">
+        <h2>Enter Your Information</h2>
+        <form id="userForm" action="connect.php" method="post">
+          <!-- User Information -->
+          <label for="name">Full Name: </label>
+          <input type="text" id="nameInput" name="name" placeholder="(Required)"  /><br />
+  
+          <label for="country">Select Your Country: (Required)</label>
+      <select id="country" name="country" onchange="updatePhoneCode()" >
+          <option value="" data-code="">--Select Country--</option>
+          <option value="USA" data-code="+1">United States (+1)</option>
+          <option value="Canada" data-code="+1">Canada (+1)</option>
+          <option value="United Kingdom" data-code="+44">United Kingdom (+44)</option>
+          <option value="Australia" data-code="+61">Australia (+61)</option>
+          <option value="Germany" data-code="+49">Germany (+49)</option>
+          <option value="France" data-code="+33">France (+33)</option>
+          <option value="India" data-code="+91">India (+91)</option>
+          <option value="Japan" data-code="+81">Japan (+81)</option>
+          <option value="Brazil" data-code="+55">Brazil (+55)</option>
+          <option value="Lebanon" data-code="+961">Lebanon (+961)</option>
+          <!-- Add more countries as needed -->
+      </select>
+      
+      <br><br>
+      
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phoneInput" name="phone" pattern="^\d{1,14}$" placeholder="Enter phone number"  /><br />
+      
+          <label for="email">Email:</label>
+          <input type="email" id="emailInput" name="email"  placeholder="(Required)"  /><br />
+      
+          <label for="location">Location:</label>
+          <input type="text" id="locationInput" name="location"  /><br />
+      
+          <label for="linkedin">LinkedIn:</label>
+          <input type="text" id="linkedinInput" name="linkedin" /><br />
+  
+          <label for="position">Position:</label>
+          <input type="text" id="positionInput" name="position" /><br />
+  
+          <label for="profileinfo">Profile info:</label>
+          <textarea id="profileinfoInput" name="profileinfo"></textarea><br />
+      
+          <!-- Skills -->
+          <label for="skills">Skills:</label><br />
+          <div id="skillsContainer">
+          <input type="text" id="skill1Input" name="skill1" placeholder="Skill 1"  /><br />
+          <!-- Hidden additional fields -->
+          <div class="hidden" id="skillsContainer-field1">
+          <input type="text" id="skill2Input" name="skill2" placeholder="Skill 2" /><br /></div>
+          <div class="hidden" id="skillsContainer-field2">
+          <input type="text" id="skill3Input" name="skill3" placeholder="Skill 3" /><br /></div>
+          <div class="hidden" id="skillsContainer-field3">
+          <input type="text" id="skill4Input" name="skill4" placeholder="Skill 4" /><br /></div>
+          </div>
+          <div id="skillsContainer-show">
+              <button  class="circle-button" onclick="toggleExtraFields('skillsContainer')"><i class="fas fa-plus"></i></button>
+          </div>
+  
+      
+          <!-- Languages -->
+          <label for="languages">Languages:</label><br />
+          <div id="languagesContainer">
+          <input type="text" id="language1Input" name="language1" placeholder="Language 1" /><br />
+          <!-- Hidden additional fields -->
+          <div class="hidden" id="languagesContainer-field1">
+          <input type="text" id="language2Input" name="language2" placeholder="Language 2" /><br /></div>
+          <div class="hidden" id="languagesContainer-field2">
+          <input type="text" id="language3Input" name="language3" placeholder="Language 3" /><br /></div>
+          <div class="hidden" id="languagesContainer-field3">
+          <input type="text" id="language4Input" name="language4" placeholder="Language 4" /><br /></div>
+          <div class="hidden" id="languagesContainer-field4">
+          <input type="text" id="language5Input" name="language5" placeholder="Language 5" /><br /></div>
+          </div>
+          <div id="languagesContainer-show">
+              <button  class="circle-button" onclick="toggleExtraFields('languagesContainer')"><i class="fas fa-plus"></i></button>
+          </div>
+  
+      
+          <!-- Hobbies -->
+          <label>Hobbies:</label><br />
+          <div id="hobbiesContainer">
+          <input type="text" id="hobby1Input" name="hobby1" placeholder="Hobby 1" /><br />
+          <!-- Hidden additional fields -->
+              <div class="hidden" id="hobbiesContainer-field1">
+                  <input type="text" id="hobby2Input" name="hobby2" placeholder="Hobby 2" /><br /></div>
+              <div class="hidden" id="hobbiesContainer-field2">
+                  <input type="text" id="hobby3Input" name="hobby3" placeholder="Hobby 3" /><br /></div>
+         </div>
+         <div id="hobbiesContainer-show">
+          <button  class="circle-button" onclick="toggleExtraFields('hobbiesContainer')"><i class="fas fa-plus"></i></button>
+         </div>
+  
+          
+      
+          <!-- Professional Experience -->
+          <div id="ExperienceContainer">
+          <h3>Professional Experience</h3>
+          <label for="experience1">Experience :</label>
+          <input type="text" id="experience1Input" name="experience1" /><br />
+          <label for="company1">Company Name:</label>
+          <input type="text" id="company1Input" name="company1" /><br />
+          <label for="jobTitle1">Job Title:</label>
+          <input type="text" id="jobTitle1Input" name="jobTitle1" /><br />
+          <label for="startDate1">Start Date:</label>
+          <input type="date" id="startDate1Input" name="startDate1"  /><br />
+          <label for="endDate1">End Date:</label>
+          <input type="date" id="endDate1Input" name="endDate1"  /><br />
+          <label for="experienceInfo1">Experience Info:</label>
+          <textarea id="experienceInfo1Input" name="experienceInfo1"></textarea><br />
+  
+          <!-- Hidden additional fields -->
+          <div class="hidden" id="ExperienceContainer-field1">
+          <h3>Professional Experience 2:</h3>
+          <label for="experience2">Experience :</label>
+          <input type="text" id="experience2Input" name="experience2" /><br />
+          <label for="company2">Company Name:</label>
+          <input type="text" id="company2Input" name="company2" /><br />
+          <label for="jobTitle2">Job Title:</label>
+          <input type="text" id="jobTitle2Input" name="jobTitle2" /><br />
+          <label for="startDate2">Start Date:</label>
+          <input type="date" id="startDate2Input" name="startDate2"  /><br />
+          <label for="endDate2">End Date:</label>
+          <input type="date" id="endDate2Input" name="endDate2"  /><br />
+          <label for="experienceInfo2">Experience Info:</label>
+          <textarea id="experienceInfo2Input" name="experienceInfo2"></textarea><br />
+          </div>
+  
+          <div class="hidden" id="ExperienceContainer-field2">
+          <h3>Professional Experience 3:</h3>
+          <label for="experience3">Experience:</label>
+          <input type="text" id="experience3Input" name="experience3" /><br />
+          <label for="company3">Company Name:</label>
+          <input type="text" id="company3Input" name="company3" /><br />
+          <label for="jobTitle3">Job Title:</label>
+          <input type="text" id="jobTitle3Input" name="jobTitle3" /><br />
+          <label for="startDate3">Start Date:</label>
+          <input type="date" id="startDate3Input" name="startDate3"  /><br />
+          <label for="endDate3">End Date:</label>
+          <input type="date" id="endDate3Input" name="endDate3"  /><br />
+          <label for="experienceInfo3">Experience Info:</label>
+          <textarea id="experienceInfo3Input" name="experienceInfo3"></textarea><br />
+          </div>
+  
+          <div class="hidden" id="ExperienceContainer-field3">
+          <h3>Professional Experience 4:</h3>
+          <label for="experience4">Experience:</label>
+          <input type="text" id="experience4Input" name="experience4" /><br />
+          <label for="company4">Company Name:</label>
+          <input type="text" id="company4Input" name="company4" /><br />
+          <label for="jobTitle4">Job Title:</label>
+          <input type="text" id="jobTitle4Input" name="jobTitle4" /><br />
+          <label for="startDate4">Start Date:</label>
+          <input type="date" id="startDate4Input" name="startDate4"  /><br />
+          <label for="endDate1">End Date:</label>
+          <input type="date" id="endDate4Input" name="endDate4"  /><br />
+          <label for="experienceInfo4">Experience Info:</label>
+          <textarea id="experienceInfo4Input" name="experienceInfo4"></textarea><br />
+          </div>
+          </div>
+          <div id="ExperienceContainer-show">
+              <button  class="circle-button" onclick="toggleExtraFields('ExperienceContainer')"><i class="fas fa-plus"></i></button>
+             </div>
+        
+          <h3>Education</h3>
+          <div id="educationContainer">
+              <div>
+                  <label for="educationinfo1">Education Info:</label>
+                  <input type="text" id="educationinfo1Input" name="educationinfo1" />
+              </div>   
+              <!-- Hidden additional fields -->
+              <div class="hidden" id="educationContainer-field1">
+                  <label for="educationinfo5">Education Info 2:</label>
+                  <input type="text" id="educationinfo2Input" name="educationinfo2" />
+              </div>
+              <div class="hidden" id="educationContainer-field2">
+                  <label for="educationinfo6">Education Info 3:</label>
+                  <input type="text" id="educationinfo3Input" name="educationinfo3" />
+              </div>
+              <div class="hidden" id="educationContainer-field3">
+                  <label for="educationinfo7">Education Info 4:</label>
+                  <input type="text" id="educationinfo4Input" name="educationinfo4" />
+              </div>
+          </div>
+          <div id="educationContainer-show">
+              <button  class="circle-button" onclick="toggleExtraFields('educationContainer')"><i class="fas fa-plus"></i></button>
+          </div>
+  
+          
+          <label for="imageInput">Choose an image:</label>
+          <input type="file" id="imageInput" accept="image/*"><br>
+          
+          <input type="submit" onclick="showElements()" value="Submit" />
+          
+        </form>
+      </div>
+       
+    <div class="container">
+      <div class="leftPanel">
+        <img src="webimages/noprofile.jfif" alt="Profile Picture" id="profilePic">
+          <div class="details">
+              <div class="item bottomLineSeparator">
+                  <h3>CONTACT</h3>
+                  <div class="smallText" id="contactDetails">
+                      <p><i class="fa fa-phone contactIcon"></i> <span id="codeDisplay"></span><span id="phoneDisplay">Phone Number</span></p>
+                      <p><i class="fa fa-envelope contactIcon"></i> <a href="#" id="emailDisplay">Email</a></p>
+                      <p><i class="fa fa-map-marker contactIcon"></i> <span id="locationDisplay">Location</span></p>
+                      <p><i class="fa fa-linkedin-square contactIcon"></i> <a href="#" id="linkedinDisplay">Linked/in</a></p>
+                  </div>
+              </div>
+
+              <div class="item bottomLineSeparator">
+                  <h3>Technical Skills</h3>
+                  <p id="skill1Display"></p>
+                  <p id="skill2Display"></p>
+                  <p id="skill3Display"></p>
+                  <p id="skill4Display"></p>
+              </div>
+              <div class="item bottomLineSeparator">
+                  <h3>Languages</h3>
+                  <p><span id="language1Display"></span></p>
+                  <p><span id="language2Display"></span></p>
+                  <p><span id="language3Display"></span></p>
+                  <p><span id="language4Display"></span></p>
+                  <p><span id="language5Display"></span></p>
+              </div>
+  
+              <div>
+                  <h3>Hobbies</h3>
+                  <p><span id="hobby1Display"></span></p>
+                  <p><span id="hobby2Display"></span></p>
+                  <p><span id="hobby3Display"></span></p>
+              </div>
+          </div>
+      </div>
+
+      <div class="rightPanel">
+        <div class="item bottomLineSeparator">
+            <h1 id="nameDisplay">Full Name</h1>
+            <h4 id="positionDisplay">position</h4>
+            <h3>Profile</h3>
+            <p id="profileDisplay">text</p> <!-- Added id for dynamic content -->
+    
+            <h3>Experience Summary</h3>
+        </div>   
+        <div class="item bottomLineSeparator">
+            <div style="color: rgb(0, 121, 121);">
+                <p id="experience1Display"><strong>Experience:</strong></p>
+                <p id="company1Display"><strong>Company:</strong></p>
+                <p id="jobTitle1Display"><strong>Job Title:</strong></p>
+                <p>
+                    <span class="dateElement" style="display: none;"></span> 
+                    <span id="startDate1Display"></span>
+                    <span class="dateElement" style="display: none;">   </span>
+                    <span class="dateElement" style="display: none;"></span> 
+                    <span id="endDate1Display"></span>
+                </p>
+                <p  id="experienceinfo1Display"><strong>Experience Info:</strong></p>               
+                  </div>
+          <div style="color: rgba(0, 44, 44);">
+        <p id="experience2Display"></p>
+        <p id="company2Display"></p>
+        <p id="jobTitle2Display"></p>
+        <p>
+            <span class="dateElement" style="display: none;"></span> 
+            <span id="startDate2Display"></span>
+            <span class="dateElement" style="display: none;">   </span>
+            <span class="dateElement" style="display: none;"></span> 
+            <span id="endDate2Display"></span>
+        </p>
+        <p><span id="experienceinfo2Display"></span></p>               
+          </div>
+          <div style="color: rgb(0, 121, 121);">
+            <p id="experience3Display"></p>
+            <p id="company3Display"></p>
+            <p id="jobTitle3Display"></p>
+        <p>
+            <span class="dateElement" style="display: none;"></span> 
+            <span id="startDate3Display"></span>
+            <span class="dateElement" style="display: none;">   </span>
+            <span class="dateElement" style="display: none;"></span> 
+            <span id="endDate3Display"></span>
+        </p>
+        <p><span id="experienceinfo3Display"></span></p>               
+          </div>
+          <div style="color: rgb(0, 44, 44);">
+            <p id="experience4Display"></p>
+            <p id="company4Display"></p>
+            <p id="jobTitle4Display"></p>
+        <p>
+            <span class="dateElement" style="display: none;"></span> 
+            <span id="startDate4Display"></span>
+            <span class="dateElement" style="display: none;">   </span>
+            <span class="dateElement" style="display: none;"></span> 
+            <span id="endDate4Display"></span>
+        </p>
+        <p><span id="experienceinfo4Display"></span></p>               
+          </div>
+
+            
+            <h3>Education</h3>
+        </div>
+            <div>
+                <p id="educationinfo1Display">Education Info</p> <!-- Added id for dynamic content -->
+            </div>
+            <div>
+                <p id="educationinfo2Display"></p> <!-- Added id for dynamic content -->
+            </div>
+            <div>
+                <p id="educationinfo3Display"></p> <!-- Added id for dynamic content -->
+            </div>
+            <div>
+                <p id="educationinfo4Display"></p> <!-- Added id for dynamic content -->
+            </div>
+        </div>
+    </div>
+  </div> 
+    
+    
+    
+  <footer>
+    <p>&copy; 2024 Fadi Dagher,for the course GIN446 Web Programming - USEK - This website is for educational purposes only.</p>
+    </footer>
+    
+
+    <script src="script.js"></script>
+   
+    
+</body>
+</html>
